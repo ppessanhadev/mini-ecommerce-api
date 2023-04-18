@@ -1,13 +1,11 @@
-import { Type } from '@nestjs/common';
-import { ApiParamOptions, ApiQueryOptions } from '@nestjs/swagger';
+import { ApiParamOptions, ApiQueryOptions, ApiResponseOptions } from '@nestjs/swagger';
 
 export interface DefineRouteOptions {
   summary?: string;
   method?: 'GET' | 'POST' | 'UPDATE' | 'DELETE';
   route?: string | '';
   code?: number | 200;
-  responseType?: string | Type<unknown>;
-  name?: string;
+  response?: ApiResponseOptions;
   queries?: ApiQueryOptions[];
   params?: ApiParamOptions[];
 }

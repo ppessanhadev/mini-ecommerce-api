@@ -1,17 +1,19 @@
 import { ApiTags } from '@nestjs/swagger';
-import { applyDecorators, Controller } from '@nestjs/common';
-import { DefineControllerOptions } from '@schemas/decorators/DefineControllerOptions';
+import { ZodValidationPipe } from 'nestjs-zod';
+import { applyDecorators, Controller, UsePipes } from '@nestjs/common';
 
 /**
  * @param {DefineControllerOptions} options - receive an object with swagger tag and path name (both are optional).
  * @example
- * |@DefineRoute({ path: 'example', tag: 'Example' })
+ * |@DefineRoute('Route')
  * class AnyRoute {
  *    ...
  * }
  */
-export const DefineController = (options?: DefineControllerOptions) => {
-  const { path, tag } = options;
-
-  return applyDecorators(ApiTags(tag || ''), Controller(path || ''));
+export const DefineController = (path?: string) => {
+  return applyDecorators(
+    ApiTags(path.toLowerCase() || ''),
+    Controller(path.toLowerCase() || ''),
+    UsePipes(ZodValidationPipe),
+  );
 };
