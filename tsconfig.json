@@ -22,9 +22,9 @@
       "@infra/*": ["src/infra/*"],
       "@repositories/*": ["src/infra/repositories/*"],
       "@controllers/*": ["src/application/controllers/*"],
-      "@schemas/*": ["src/shared/schemas/*"],
+      "@schemas/*": ["src/shared/types/*"],
       "@shared/*": ["src/shared/*"],
-      "@decorators/*": ["src/application/decorators/*"],
+      "@application/*": ["src/application/*"],
     }
   }
 }

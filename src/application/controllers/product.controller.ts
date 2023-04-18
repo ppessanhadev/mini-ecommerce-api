@@ -1,14 +1,11 @@
-import { SetRoute } from '@decorators/set-route.decorator';
-import { Controller } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { ApiTags } from '@nestjs/swagger';
+import { DefineController, DefineRoute } from '@application/decorators';
 
-@ApiTags('Products')
-@Controller('products')
+@DefineController({ tag: 'Products', path: 'product' })
 export class ProductController {
   constructor(private config: ConfigService) {}
 
-  @SetRoute({
+  @DefineRoute({
     method: 'GET',
     summary: 'List all products avaliable',
   })
