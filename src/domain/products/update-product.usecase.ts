@@ -8,6 +8,6 @@ export class UpdateProductUseCase {
 
   public async update(id: string, product: Product) {
     await this.productRepository.update(id, product);
-    return id;
+    return { id, ...product };
   }
 }
