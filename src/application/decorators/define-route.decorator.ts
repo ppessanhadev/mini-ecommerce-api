@@ -7,11 +7,11 @@ import { DefineRouteOptions } from '@shared/types/decorators/DefineRouteOptions'
  * @example
  * class AnyRoute {
  *    |@DefineRoute({
- *      method: 'POST',
+ *      method: 'GET',
  *      summary: 'This is an example',
  *      queries: [{ name: 'search', example: 'something' }],
- *      code: 201,
- *      responseType: GenericType
+ *      response: { type: ExampleDTO },
+ *      code: 201
  *    })
  *    async index() {}
  * }
