@@ -2,7 +2,7 @@ import { CreateProductDTO } from '@schemas/create-product.schema';
 import { DefineController, DefineRoute } from '@application/decorators';
 import { ListProductsUseCase } from '@domain/products/list-products.usecase';
 
-@DefineController('Product')
+@DefineController('product')
 export class ListProductsController {
   constructor(private listProductUseCase: ListProductsUseCase) {}
 
