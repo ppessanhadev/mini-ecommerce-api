@@ -7,7 +7,7 @@ const ListProductsSchema = z.array(
     name: z.string(),
     price: z.number(),
     stock: z.number(),
-    image: z.any(),
+    image: z.string(),
   }),
 );
 
