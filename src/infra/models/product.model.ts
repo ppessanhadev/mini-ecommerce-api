@@ -1,7 +1,7 @@
 import { HydratedDocument } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
-@Schema({ versionKey: false, _id: false })
+@Schema({ versionKey: false })
 export class Product {
   @Prop()
   name: string;
