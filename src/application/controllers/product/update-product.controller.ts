@@ -9,9 +9,8 @@ export class UpdateProductController {
   constructor(private updateProductUseCase: UpdateProductUseCase) {}
 
   @DefineRoute({
-    method: 'POST',
+    method: 'UPDATE',
     summary: 'Updates one product, receives an id as query and all the data on requested body to be updated',
-    route: 'update',
     queries: [{ name: 'id', example: '64403854193a51b25199143e' }],
     response: { type: UpdateProductDTO },
   })
