@@ -1,5 +1,5 @@
 # Checklist:
-  - [ ] Terminar a parte de produtos (update/delete/upload de imagem?)
+  - [x] Terminar a parte de produtos (update/delete/upload de imagem?)
   - [ ] Implementar parte de login e token refresh com JWT (user)
   - [ ] Build da aplicação completa pelo docker-compose
   - [ ] Fazer README.md

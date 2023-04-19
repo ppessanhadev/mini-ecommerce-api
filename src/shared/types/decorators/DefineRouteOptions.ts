@@ -8,4 +8,5 @@ export interface DefineRouteOptions {
   response?: ApiResponseOptions;
   queries?: ApiQueryOptions[];
   params?: ApiParamOptions[];
+  auth?: boolean;
 }
