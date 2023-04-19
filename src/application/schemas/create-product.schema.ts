@@ -3,9 +3,13 @@ import { z } from 'zod';
 
 const CreateProductSchema = z.object({
   name: z.string(),
-  value: z.number(),
-  qtd: z.number().max(500, { message: 'Valor precisa ser menor ou igual a 500' }),
-  manufactor: z.string().optional(),
+  price: z.number(),
+  stock: z.number(),
+  image: z
+    .any()
+    .refine((file) => file?.size <= 1000000 * 10, 'Tamanho max. permitido: 10MB')
+    .refine((file) => file?.type.includes(['image/jpg', 'image/png']), 'Formatos permitidos: JPG e PNG')
+    .optional(),
 });
 
 export class CreateProductDTO extends createZodDto(CreateProductSchema) {}
