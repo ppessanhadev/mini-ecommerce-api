@@ -8,7 +8,7 @@ const CreateProductSchema = z.object({
   image: z
     .any()
     .refine((file) => file?.size <= 1000000 * 10, 'Tamanho max. permitido: 10MB')
-    .refine((file) => file?.type.includes(['image/jpg', 'image/png']), 'Formatos permitidos: JPG e PNG')
+    .refine((file) => file?.type?.includes(['image/jpg', 'image/png']), 'Formatos permitidos: JPG e PNG')
     .optional(),
 });
 
