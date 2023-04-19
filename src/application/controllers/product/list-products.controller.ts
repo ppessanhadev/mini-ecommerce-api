@@ -1,4 +1,4 @@
-import { CreateProductDTO } from '@schemas/create-product.schema';
+import { ListProductResponse } from '@schemas/list-products.schema';
 import { DefineController, DefineRoute } from '@application/decorators';
 import { ListProductsUseCase } from '@domain/products/list-products.usecase';
 
@@ -9,7 +9,7 @@ export class ListProductsController {
   @DefineRoute({
     method: 'GET',
     summary: 'List all avaliable products',
-    response: { type: CreateProductDTO },
+    response: { type: ListProductResponse },
   })
   public async list() {
     const response = await this.listProductUseCase.list();
