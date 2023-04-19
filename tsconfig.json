@@ -22,7 +22,7 @@
       "@infra/*": ["src/infra/*"],
       "@repositories/*": ["src/infra/repositories/*"],
       "@controllers/*": ["src/application/controllers/*"],
-      "@schemas/*": ["src/shared/types/*"],
+      "@validators/*": ["src/application/validators/*"],
       "@shared/*": ["src/shared/*"],
       "@application/*": ["src/application/*"],
     }
