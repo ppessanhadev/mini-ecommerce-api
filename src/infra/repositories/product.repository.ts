@@ -8,7 +8,8 @@ export class ProductRepository {
   constructor(@InjectModel(Product.name) private productModel: Model<ProductDocument>) {}
 
   public async findAll(query: FilterQuery<Product>) {
-    return this.productModel.find(query);
+    const projection = { id: '$_id', _id: 0, name: 1, stock: 1, price: 1, image: 1 };
+    return this.productModel.find(query, {}, { projection });
   }
 
   public async findOne(query: FilterQuery<Product>) {
@@ -20,7 +21,7 @@ export class ProductRepository {
   }
 
   public async update(id: string, product: Partial<Product>) {
-    return this.productModel.findOneAndUpdate({ id }, product);
+    return this.productModel.findOneAndUpdate({ _id: id }, product);
   }
 
   public async delete(id: string) {

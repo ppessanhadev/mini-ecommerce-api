@@ -1,8 +1,12 @@
 import { HydratedDocument } from 'mongoose';
+import { v1 as uuid } from 'uuid';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 @Schema({ versionKey: false })
 export class Product {
+  @Prop({ type: String, default: () => uuid() })
+  _id: string;
+
   @Prop()
   name: string;
 
