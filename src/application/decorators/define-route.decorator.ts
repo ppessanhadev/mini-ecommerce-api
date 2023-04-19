@@ -1,5 +1,5 @@
+import { ApiOperation, ApiParam, ApiQuery, ApiResponse } from '@nestjs/swagger';
 import { applyDecorators, Get, Post, Patch, Delete, HttpCode } from '@nestjs/common';
-import { ApiCreatedResponse, ApiOperation, ApiParam, ApiQuery } from '@nestjs/swagger';
 import { DefineRouteOptions } from '@shared/types/decorators/DefineRouteOptions';
 
 /**
@@ -40,9 +40,9 @@ export const DefineRoute = (option: DefineRouteOptions) => {
 
   return applyDecorators(
     methods[method || 'GET'](route),
-    ApiOperation({ summary: summary || '' }),
-    ApiCreatedResponse(response),
     HttpCode(code),
+    ApiOperation({ summary: summary || '' }),
+    ApiResponse({ ...(response || {}), status: code }),
     ...applyQueries(),
     ...applyParams(),
   );
