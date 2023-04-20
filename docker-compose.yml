@@ -9,6 +9,24 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=${DB_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${DB_PASSWORD}
     volumes:
-      - ./volumes/mongo:/data/db
+      - db:/data/db
     ports:
       - 27017:27017
+
+  api:
+    container_name: mini-ecommerce-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    environment:
+      - DB_URI=mongodb://${DB_USERNAME}:${DB_PASSWORD}@database:27017
+    ports:
+      - 5500:5500
+    expose:
+      - 5500
+    depends_on:
+      - database
+volumes:
+  db:
+    driver: local
