@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { JwtModule } from '@nestjs/jwt';
 import { ProductDomainModule } from '@domain/products/products.module';
 import { ListProductsController } from '@application/controllers/product/list-products.controller';
 import { CreateProductController } from '@application/controllers/product/create-product.controller';
@@ -7,6 +8,6 @@ import { DeleteProductController } from '@application/controllers/product/delete
 
 @Module({
   controllers: [CreateProductController, ListProductsController, UpdateProductController, DeleteProductController],
-  imports: [ProductDomainModule],
+  imports: [ProductDomainModule, JwtModule],
 })
 export class ProductModule {}

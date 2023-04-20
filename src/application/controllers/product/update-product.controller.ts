@@ -13,6 +13,7 @@ export class UpdateProductController {
     summary: 'Updates one product, receives an id as query and all the data on requested body to be updated',
     queries: [{ name: 'id', example: '64403854193a51b25199143e' }],
     response: { type: UpdateProductResponse },
+    auth: true,
   })
   public async create(@Body() product: UpdateProductDTO, @Query('id') id: string) {
     const response = await this.updateProductUseCase.update(id, product as Product);

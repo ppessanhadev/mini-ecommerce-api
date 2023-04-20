@@ -13,6 +13,7 @@ export class CreateProductController {
     summary: 'Creates a new product',
     code: 204,
     response: { description: 'No content' },
+    auth: true,
   })
   public async create(@Body() body: CreateProductDTO) {
     await this.createProductUseCase.create(body as Product);

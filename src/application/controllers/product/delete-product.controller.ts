@@ -12,6 +12,7 @@ export class DeleteProductController {
     summary: 'Delete a product, receives an id as query and then remove from database',
     queries: [{ name: 'id', example: '64403854193a51b25199143e' }],
     response: { type: DeleteProductResponse },
+    auth: true,
   })
   public async create(@Query('id') id: string) {
     const response = await this.deleteProductUseCase.delete(id);
