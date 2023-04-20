@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { Product } from '@infra/models/product.model';
 import { ProductRepository } from '@infra/repositories/product.repository';
 
@@ -7,7 +7,11 @@ export class UpdateProductUseCase {
   constructor(private productRepository: ProductRepository) {}
 
   public async update(id: string, product: Product) {
-    await this.productRepository.update(id, product);
+    const response = await this.productRepository.update(id, product);
+
+    if (!response) {
+      throw new BadRequestException('Product not found');
+    }
     return { id, ...product };
   }
 }
