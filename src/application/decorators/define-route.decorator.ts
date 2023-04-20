@@ -1,4 +1,4 @@
-import { ApiOperation, ApiParam, ApiQuery, ApiResponse } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiParam, ApiQuery, ApiResponse } from '@nestjs/swagger';
 import { applyDecorators, Get, Post, Patch, Delete, HttpCode, UseGuards } from '@nestjs/common';
 import { DefineRouteOptions } from '@shared/types/decorators/DefineRouteOptions';
 import { AuthGuard } from '@application/auth/auth.guard';
@@ -40,7 +40,10 @@ export const DefineRoute = (option: DefineRouteOptions) => {
     return params.map((param) => ApiParam(param));
   };
 
-  const applyAuth = () => (auth ? [UseGuards(AuthGuard)] : []);
+  const applyAuth = () => {
+    if (!auth) return [];
+    return [ApiBearerAuth('access-token'), UseGuards(AuthGuard)];
+  };
 
   return applyDecorators(
     methods[method || 'GET'](route),

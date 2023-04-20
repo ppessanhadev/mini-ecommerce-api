@@ -10,6 +10,15 @@ const swaggerConfig = (app: INestApplication) => {
     .setTitle('Mini ecommerce API')
     .setDescription('An mini ecommerce CRUD')
     .setVersion('1.0')
+    .addBearerAuth(
+      {
+        type: 'http',
+        bearerFormat: 'JWT',
+        description:
+          'Para gerar um token, basta logar com o usuário e senha fornecido em <b>/api/v1/user</b>.<br>Não precisa incluir o "Bearer".',
+      },
+      'access-token',
+    )
     .build();
 
   patchNestJsSwagger();
