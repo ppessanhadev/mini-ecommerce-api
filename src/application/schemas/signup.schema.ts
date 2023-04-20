@@ -3,7 +3,7 @@ import { z } from 'zod';
 
 const SigninSchema = z.object({
   username: z.string(),
-  password: z.string().min(8),
+  password: z.string(),
 });
 
 export class SigninDTO extends createZodDto(SigninSchema) {}
