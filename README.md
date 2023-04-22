@@ -30,7 +30,7 @@ A API também conta com uma documentação gerada através do [Swagger](https://
 |  PATCH | /api/v1/products?id={id_aqui} |  Sim |     id    | Atualiza uma ou mais informação do produto em especifico<br>Podendo ser: **name**, **price**, **stock** ou **image**      |
 | DELETE | /api/v1/products?id={id_aqui} |  Sim |     id    | Deleta por completo um produto especifico no banco de dados                                                               |
 |  POST  | /api/v1/user                  |  Não |     -     | Recebe os campos: **username** e **password**<br>Retorna um token para ser utilizado em outras requisições                |
-|   GET  | /api/v1/user/check-token      |  Sim |     -     | Rota para validar se o token.<br>Util para recuperar sessão com o mesmo token gerado anteriormente.                       |
+|   GET  | /api/v1/user/check-token      |  Sim |     -     | Rota para validar o token.<br>Util para recuperar sessão com o mesmo token gerado anteriormente.                       |
 
 #### Arquitetura
 
