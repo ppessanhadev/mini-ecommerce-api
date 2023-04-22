@@ -52,7 +52,7 @@ A partir da raiz do projeto em seu terminal, siga os próximos passos para rodar
 1. `cp .env.example .env`
 2. `docker-compose up -d`
 
-**Rodando localmente com pmpm**
+**Rodando localmente com pnpm**
 
 O projeto em si foi desenvolvido utilizado o gerenciador de pacote [pnpm](https://pnpm.io), para instalar, no seu terminal execute o comando `npm i -g pnpm`, e siga os próximos passos:
 
