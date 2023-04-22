@@ -57,7 +57,8 @@ A partir da raiz do projeto em seu terminal, siga os próximos passos para rodar
 O projeto em si foi desenvolvido utilizado o gerenciador de pacote [pnpm](https://pnpm.io), para instalar, no seu terminal execute o comando `npm i -g pnpm`, e siga os próximos passos:
 
 1. `cp .env.example .env`
-2. Altere o valor `DB_URI` dentro de `.env` para uri do seu mongo local
+2. `pnpm install`
+3. Altere o valor de `DB_URI` dentro de `.env` para uri do seu mongo local
 3. `pnpm start:dev`
 
 **ATENÇÃO**: Por padrão o usuário admin é gerado como:
