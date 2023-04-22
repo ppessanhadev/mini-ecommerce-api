@@ -65,3 +65,5 @@ O projeto em si foi desenvolvido utilizado o gerenciador de pacote [pnpm](https:
   - `password`: secretp4ssw0rd
 
 Caso queira alterar, é necessário que apague a collection `users` gerada e altere os campos `ADMIN_USERANME` e `ADMIN_PASSWORD`
+
+>> A aplicação estará rodando em: http://localhost:5500
