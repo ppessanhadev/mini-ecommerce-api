@@ -20,7 +20,7 @@ export class AuthGuard implements CanActivate {
         secret: this.config.get('JWT_SECRET_KEY'),
       });
     } catch {
-      throw new UnauthorizedException();
+      throw new UnauthorizedException('Invalid token');
     }
     return true;
   }
