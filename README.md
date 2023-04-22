@@ -21,13 +21,14 @@ Para esse projeto, utilizei as seguintes principais ferramentas:
 
 A API também conta com uma documentação gerada através do [Swagger](https://swagger.io) e pode ser acessada por [esse link](), ele possuí as seguintes rotas:
 
-| Método |              Rota             | Auth | Parâmetro |                                                         Descrição                                                         |
+| Metodo |              Rota             | Auth | Parametro |                                                         Descrição                                                         |
 |:------:|:-----------------------------:|:----:|:---------:|:-------------------------------------------------------------------------------------------------------------------------:|
-|   GET  | /api/v1/products              | Não  |     -     | Lista todos os produtos disponíveis                                                                                       |
-|  POST  | /api/v1/products              | Sim  |     -     | Recebe os campos: **name**, **price**, **stock** ou **image**(opcional)<br>E então cria um novo produto no banco de dados |
-|  PATCH | /api/v1/products?id={id_aqui} | Sim  |     id    | Atualiza uma ou mais informação do produto em especifico<br>Podendo ser: **name**, **price**, **stock** ou **image**      |
-| DELETE | /api/v1/products?id={id_aqui} | Sim  |     id    | Deleta por completo um produto especifico no banco de dados                                                               |
-|  POST  | /api/v1/user                  | Não  |     -     | Recebe os campos: **username** e **password**<br>Retorna um token para ser utilizado em outras requisições                |
+|   GET  | /api/v1/products              |  Não |     -     | Lista todos os produtos disponíveis                                                                                       |
+|  POST  | /api/v1/products              |  Sim |     -     | Recebe os campos: **name**, **price**, **stock** ou **image**(opcional)<br>E então cria um novo produto no banco de dados |
+|  PATCH | /api/v1/products?id={id_aqui} |  Sim |     id    | Atualiza uma ou mais informação do produto em especifico<br>Podendo ser: **name**, **price**, **stock** ou **image**      |
+| DELETE | /api/v1/products?id={id_aqui} |  Sim |     id    | Deleta por completo um produto especifico no banco de dados                                                               |
+|  POST  | /api/v1/user                  |  Não |     -     | Recebe os campos: **username** e **password**<br>Retorna um token para ser utilizado em outras requisições                |
+|   GET  | /api/v1/user/check-token      |  Sim |     -     | Rota para validar se o token.<br>Util para recuperar sessão com o mesmo token gerado anteriormente.                       |
 
 #### Arquitetura
 
