@@ -3,6 +3,8 @@
 Essa aplicação tem como objetivo ser a API monólito de um projeto voltado para ser um mini ecommerce.
 Aqui possuí todas as regras de negócio e comunicação externas, seja para outras APIs ou conexão com banco de dados.
 
+A API recebeu um deploy pelo [render](https://render.com) e pode ser acessada por [aqui](https://ppessanhadev-mini-ecommerce.onrender.com), também tendo acesso a sua documentação por [esse link](https://ppessanhadev-mini-ecommerce.onrender.com/api/docs).
+
 ## Overview
 Durante o desenvolvimento, utilizei alguns conceitos de padrões e arquitetura em conjunto com alguns pacotes para facilitar e dar mais escalabilidade ao projeto de maneira organizada.
 
@@ -19,7 +21,7 @@ Para esse projeto, utilizei as seguintes principais ferramentas:
 
 #### Rotas
 
-A API também conta com uma documentação gerada através do [Swagger](https://swagger.io) e pode ser acessada por [esse link](), ele possuí as seguintes rotas:
+A API também conta com uma documentação gerada através do [Swagger](https://swagger.io), ele possuí as seguintes rotas:
 
 | Metodo |              Rota             | Auth | Parametro |                                                         Descrição                                                         |
 |:------:|:-----------------------------:|:----:|:---------:|:-------------------------------------------------------------------------------------------------------------------------:|
